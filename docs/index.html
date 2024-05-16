@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover"
+    />
+    <meta name="description" content="Dokumentasi SIMGOS Oleh Rakyat" />
+    <title>SIMGOS Documentation by Community</title>
+
+    <!-- Themes (light + dark) -->
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme: dark)"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+    />
+    <link
+      rel="stylesheet"
+      media="(prefers-color-scheme: light)"
+      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+    />
+
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        /* --theme-hue: 325; */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#/">
+        <h1 style="color: white">HOME</h1>
+      </a>
+    </nav>
+    <div id="app"></div>
+    <script>
+      // Docsify
+      window.$docsify = {
+        // GENERAL
+        // -----------------------------------------------------------------
+        name: "SIMGOS DOCS ",
+        repo: "https://github.com/argadhika/simgos-docs",
+        homepage: "README.md",
+
+        // NAVIGATION
+        // -----------------------------------------------------------------
+        alias: {
+          ".*?/changelog":
+            "https://raw.githubusercontent.com/jhildenbiddle/docsify-themeable/master/CHANGELOG.md",
+        },
+        auto2top: true,
+        maxLevel: 3,
+        loadSidebar: true,
+        subMaxLevel: 3,
+
+        // PLUGINS
+        // -----------------------------------------------------------------
+        ethicalAds: {
+          eaPublisher: "jhildenbiddle-github-io",
+        },
+        executeScript: true,
+        search: {
+          depth: 3,
+          noData: "No results!",
+          placeholder: "Search...",
+        },
+        plugins: [
+          // Restores initial <title>
+          function persistTitle(hook, vm) {
+            var titleElm = document.querySelector("title");
+            var rootTitle = titleElm && titleElm.textContent;
+            var pageTitlePrefix = window.$docsify.name
+              ? window.$docsify.name + " - "
+              : "";
+
+            if (rootTitle) {
+              hook.doneEach(function () {
+                var currentTitle = titleElm.textContent;
+                var isRoot = !/\/[a-z]/.test(location.hash);
+                var newTitle = isRoot
+                  ? rootTitle
+                  : pageTitlePrefix + currentTitle;
+
+                titleElm.textContent = newTitle;
+              });
+            }
+          },
+        ],
+      };
+    </script>
+
+    <!-- Required -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+    <!-- Recommended -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-ethicalads@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  </body>
+</html>

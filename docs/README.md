@@ -3,7 +3,7 @@
 Dokumentasi SIMGOS by Community
 diharapkan dapat melengkapi [DOKUMENTASI OFFICIAL ](https://docs.simgos2.simpel.web.id/docs/) sehingga developer maupun pengguna dapat lebih terbantu.
 
-Disclaimer : kami seluruh kontributor repository ini tidak bertanggung jawab apabila terjadi kehilangan / adanya perubahan yang tidak diinginkan di data/sistem/server yang anda miliki, setelah mengikuti langkah/dokumentasi yang ada disini. Apa yang bekerja di suatu sistem belum pasti bekerja di sistem lainnya.
+Disclaimer / Catatan Penting : kami seluruh kontributor repository ini tidak bertanggung jawab apabila terjadi kehilangan / adanya perubahan yang tidak diinginkan di data/sistem/server yang anda miliki, setelah mengikuti langkah/dokumentasi yang ada disini. Apa yang bekerja di suatu sistem belum pasti bekerja di sistem lainnya.
 
 ## Cara Kontribusi
 
