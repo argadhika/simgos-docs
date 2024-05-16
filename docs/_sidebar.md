@@ -2,7 +2,7 @@
 - [Backup](/backup/)
 
   - [Database Script 1](/backup/database-script1.md)
-  - [rclone](/backup/rclone.md)
+  - [rclone + BackBlaze](/backup/rclone-b2.md)
 
 - [Frequently Asked Questions](/faq/)
 
