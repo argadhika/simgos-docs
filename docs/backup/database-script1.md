@@ -70,11 +70,11 @@ Cocok bagi saya yang membuat full backup 2x/hari. Sesuaikan dengan kondisi anda
 ```shell
 #!/bin/bash
 
-# Direktori yang berisi file-file (ubah direktori ini)
+# Direktori yang berisi file-file
 DIR="{BASE_TARGET_DIR}"
 
 # Jumlah file terbaru yang ingin disimpan
-n=3
+n=6
 
 # Temukan dan hapus file tertua, simpan hanya n file terbaru
 cd "$DIR" || { echo "Direktori tidak ditemukan"; exit 1; }
@@ -97,6 +97,66 @@ if (( files_to_delete > 0 )); then
 else
     echo "Tidak ada yang perlu dihapus. Total file ($total_files) kurang dari atau sama dengan $n."
 fi
+
+
+# Assign the input filename to a variable
+filename="$DIR/simgosBackup.sh.log"
+
+# Check if the file exists
+if [ ! -f "$filename" ]; then
+  echo "File tidak ditemukan!"
+  exit 1
+fi
+
+# Get file size in bytes
+file_size=$(stat -c "%s" "$filename")
+
+# Check if file size is greater than 10MB (10,000,000 bytes)
+if [ "$file_size" -le 10000000 ]; then
+  echo "File $filename kurang dari 10MB, tidak ada aksi yang dilakukan."
+  exit 0
+fi
+
+# Get total line count of the file
+total_lines=$(wc -l < "$filename")
+
+# Calculate number of lines to delete (80%)
+lines_to_delete=$(( $total_lines * 4 / 5 ))
+
+# Delete top 80% of lines
+sed -i "1,${lines_to_delete}d" "$filename"
+
+# Print a success message
+echo "Telah dihapus 80% baris teratas dari $filename"
+
+filename="/root/simgosBackup.sh.cron.log"
+
+# Check if the file exists
+if [ ! -f "$filename" ]; then
+  echo "File tidak ditemukan!"
+  exit 1
+fi
+
+# Get file size in bytes
+file_size=$(stat -c "%s" "$filename")
+
+# Check if file size is greater than 10MB (10,000,000 bytes)
+if [ "$file_size" -le 10000000 ]; then
+  echo "File $filename kurang dari 10MB, tidak ada aksi yang dilakukan."
+  exit 0
+fi
+
+# Get total line count of the file
+total_lines=$(wc -l < "$filename")
+
+# Calculate number of lines to delete (80%)
+lines_to_delete=$(( $total_lines * 4 / 5 ))
+
+# Delete top 80% of lines
+sed -i "1,${lines_to_delete}d" "$filename"
+
+# Print a success message
+echo "Telah dihapus 80% baris teratas dari $filename"
 ```
 
 ## Contoh Cronjob Backup dan Sync menggunakan rclone
