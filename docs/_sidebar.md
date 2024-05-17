@@ -1,7 +1,7 @@
 - [Home](/)
 - [Backup](/backup/)
 
-  - [Database Script 1](/backup/database-script1.md)
+  - [Database Script1](/backup/database-script1.md)
   - [rclone + Object Storage](/backup/rclone-s3.md)
   - [rclone + BackBlaze](/backup/rclone-b2.md)
 
