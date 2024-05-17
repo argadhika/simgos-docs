@@ -1,6 +1,6 @@
 ### DPJP to PPA
 
-Script Ini Mengubah tulisan "DPJP" di tampilan SIMGOS Detail Kunjungan Menjadi "PPA", istilah yang sering dipakai di Faskes Tingkat Pertama
+Script Ini Mengubah tulisan "DPJP" di tampilan SIMGOS Detail Kunjungan Menjadi "PPA", istilah yang sering dipakai di Faskes Tingkat Pertama\
 Tidak Mengubah tulisan di Laporan
 
 ```bash
