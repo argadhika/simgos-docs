@@ -9,7 +9,8 @@ Disclaimer / Catatan Penting : kami seluruh kontributor repository ini tidak ber
 
 simgos-docs menggunakan [docsify](https://github.com/docsifyjs/docsify) sebagai static file /site generatornya.
 
-- Clone Github Repository ini
+- Fork dan Clone Github Repository ini
 - Pastikan nodejs dan NPM terinstall, gunakan versi LTS
 - `npm i docsify-cli -g`
 - `docsify serve docs`
+- Jika sudah melakukan penyutingan, commit ke fork repository, dan request merge
