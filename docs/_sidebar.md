@@ -15,5 +15,6 @@
 
 - [Tools dan Script](/tools/)
   - [DPJP to PPA](/tools/dpjp_ppa.md)
+  - [Report DIV Fix](/tools/div_newline.md)
 - [Github Page](https://github.com/argadhika/simgos-docs)
 - [SIMGOS Official Site](awesome.md)
